@@ -4,20 +4,14 @@
 <head>
     <title>Battleships Game - Setup</title>
     <style>
-        /* Add your styles here */
     </style>
     <script>
         function sendSetup(url) {
-            // Get user selections
             var difficulty = document.getElementById('difficulty').value;
             var boardSize = document.getElementById('boardSize').value;
-
-            // Prepare form data
             var formData = new FormData();
             formData.append('difficulty', difficulty);
             formData.append('board_size', boardSize);
-
-            // Send form data to the server
             fetch(url, {
                     method: 'POST',
                     body: formData,
@@ -55,12 +49,11 @@
 
         <br>
 
-        <label for="boardSize">Select Board Size (5-15):</label>
+        <label for="boardSize">Select Board Size (6-15):</label>
         <input type="number" id="boardSize" name="board_size" min="5" max="15">
 
         <br>
 
-        <!-- Insert the url for the send setup as the argument in the sendSetup function -->
         <button type="button" onclick="sendSetup('/setup')">Send Setup</button>
     </form>
 

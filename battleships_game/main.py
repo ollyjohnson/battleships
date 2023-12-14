@@ -29,7 +29,7 @@ def process_setup():
             "medium": "Medium",
             "hard": "Hard",
         }
-        board_size_options = [i for i in range(5,16)]
+        board_size_options = [i for i in range(6,16)]
 
         return render_template('setup.html', difficulty_options=difficulty_options,
                               board_size_options=board_size_options)
@@ -39,11 +39,11 @@ def process_setup():
         board_size = int(request.form.get("board_size"))
         if difficulty not in ["easy", "medium", "hard"]:
             return jsonify({"error": "Invalid difficulty selected."})
-        if board_size < 5 or board_size > 15:
+        if board_size < 6 or board_size > 15:
             return jsonify({"error": "Invalid board size selected."})
         setup["difficulty"] = difficulty
         setup["board_size"] = board_size
-        logging.info("Game setup succesful. Difficulty - %s Board Size - %s", 
+        logging.info("Game setup succesful. Difficulty - %s Board Size - %s",
                      difficulty, board_size)
         return jsonify({'message': 'Received'})
 

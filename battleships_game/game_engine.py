@@ -52,12 +52,12 @@ def simple_game_loop():
     logging.info("Simple game started")
     print("Ahoyhoy, Welcome to Battleships!")
     board_size = 0
-    while board_size < 5 or board_size > 10:
+    while board_size < 6 or board_size > 10:
         try:
             board_size = int(input("What size would you like the board? (5-10):"))
         except ValueError:
             logging.warning("Invalid board size entered: %s", board_size)
-            print("Please enter a number between (5-10)")
+            print("Please enter a number between (6-10)")
     grid = initialise_board(size=board_size)
     battleships = create_battleships()
     board = place_battleships(grid, battleships)
