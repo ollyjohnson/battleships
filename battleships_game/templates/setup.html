@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Battleships Game - Setup</title>
+    <style>
+        /* Add your styles here */
+    </style>
+    <script>
+        function sendSetup(url) {
+            // Get user selections
+            var difficulty = document.getElementById('difficulty').value;
+            var boardSize = document.getElementById('boardSize').value;
+
+            // Prepare form data
+            var formData = new FormData();
+            formData.append('difficulty', difficulty);
+            formData.append('board_size', boardSize);
+
+            // Send form data to the server
+            fetch(url, {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        console.error('Network response was not ok', response);
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Setup data received:', data);
+                    alert("Setup sent successfully. Redirecting to placement page.");
+                    window.location.href = '/placement';
+                })
+                .catch((error) => {
+                    console.error("Error sending setup:", error);
+                    alert("Error sending setup: " + error.message);
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Battleships Game - Setup</h1>
+
+    <form>
+        <label for="difficulty">Select Difficulty:</label>
+        <select id="difficulty" name="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+
+        <br>
+
+        <label for="boardSize">Select Board Size (5-15):</label>
+        <input type="number" id="boardSize" name="board_size" min="5" max="15">
+
+        <br>
+
+        <!-- Insert the url for the send setup as the argument in the sendSetup function -->
+        <button type="button" onclick="sendSetup('/setup')">Send Setup</button>
+    </form>
+
+</body>
+
+</html>

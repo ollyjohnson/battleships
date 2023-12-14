@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>battleships_game &#8212; Battleships Game 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="battleships-game">
+<h1>battleships_game<a class="headerlink" href="#battleships-game" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="components.html">components module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="components.html#components.create_battleships"><code class="docutils literal notranslate"><span class="pre">create_battleships()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="components.html#components.initialise_board"><code class="docutils literal notranslate"><span class="pre">initialise_board()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="components.html#components.is_valid_placement"><code class="docutils literal notranslate"><span class="pre">is_valid_placement()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="components.html#components.json_to_dict"><code class="docutils literal notranslate"><span class="pre">json_to_dict()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="components.html#components.place_battleships"><code class="docutils literal notranslate"><span class="pre">place_battleships()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="game_engine.html">game_engine module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="game_engine.html#game_engine.attack"><code class="docutils literal notranslate"><span class="pre">attack()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="game_engine.html#game_engine.cli_coordinates_input"><code class="docutils literal notranslate"><span class="pre">cli_coordinates_input()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="game_engine.html#game_engine.simple_game_loop"><code class="docutils literal notranslate"><span class="pre">simple_game_loop()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.placement_interface"><code class="docutils literal notranslate"><span class="pre">placement_interface()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.process_attack"><code class="docutils literal notranslate"><span class="pre">process_attack()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.process_setup"><code class="docutils literal notranslate"><span class="pre">process_setup()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.root"><code class="docutils literal notranslate"><span class="pre">root()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mp_game_engine.html">mp_game_engine module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mp_game_engine.html#mp_game_engine.ai_opponent_game_loop"><code class="docutils literal notranslate"><span class="pre">ai_opponent_game_loop()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp_game_engine.html#mp_game_engine.generate_attack"><code class="docutils literal notranslate"><span class="pre">generate_attack()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests.test_functionality">tests.test_functionality module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_functionality.test_attack"><code class="docutils literal notranslate"><span class="pre">test_attack()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_functionality.test_cli_coordinates_input"><code class="docutils literal notranslate"><span class="pre">test_cli_coordinates_input()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_functionality.test_create_battleships"><code class="docutils literal notranslate"><span class="pre">test_create_battleships()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_functionality.test_generate_attack"><code class="docutils literal notranslate"><span class="pre">test_generate_attack()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_functionality.test_initialise_board_return_size"><code class="docutils literal notranslate"><span class="pre">test_initialise_board_return_size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_functionality.test_is_valid_placement"><code class="docutils literal notranslate"><span class="pre">test_is_valid_placement()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_functionality.test_json_to_dict"><code class="docutils literal notranslate"><span class="pre">test_json_to_dict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_functionality.test_place_battleships"><code class="docutils literal notranslate"><span class="pre">test_place_battleships()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests.test_helper_functions">tests.test_helper_functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_helper_functions.TestReport"><code class="docutils literal notranslate"><span class="pre">TestReport</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_helper_functions.TestReport.add_message"><code class="docutils literal notranslate"><span class="pre">TestReport.add_message()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_helper_functions.count_ships_on_board"><code class="docutils literal notranslate"><span class="pre">count_ships_on_board()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_helper_functions.is_dict_of_type"><code class="docutils literal notranslate"><span class="pre">is_dict_of_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_helper_functions.is_list_of_lists"><code class="docutils literal notranslate"><span class="pre">is_list_of_lists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_helper_functions.tuple_of_type"><code class="docutils literal notranslate"><span class="pre">tuple_of_type()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests.test_students">tests.test_students module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_ai_opponent_game_loop_exists"><code class="docutils literal notranslate"><span class="pre">test_ai_opponent_game_loop_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_attack_arguments"><code class="docutils literal notranslate"><span class="pre">test_attack_arguments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_attack_exists"><code class="docutils literal notranslate"><span class="pre">test_attack_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_battleships_txt_exists"><code class="docutils literal notranslate"><span class="pre">test_battleships_txt_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_cli_coordinates_input_exists"><code class="docutils literal notranslate"><span class="pre">test_cli_coordinates_input_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_components_exists"><code class="docutils literal notranslate"><span class="pre">test_components_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_create_battleships_argument"><code class="docutils literal notranslate"><span class="pre">test_create_battleships_argument()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_create_battleships_exists"><code class="docutils literal notranslate"><span class="pre">test_create_battleships_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_create_battleships_return_type"><code class="docutils literal notranslate"><span class="pre">test_create_battleships_return_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_game_engine_exists"><code class="docutils literal notranslate"><span class="pre">test_game_engine_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_generate_attack_exists"><code class="docutils literal notranslate"><span class="pre">test_generate_attack_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_generate_attack_return_type"><code class="docutils literal notranslate"><span class="pre">test_generate_attack_return_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_initialise_board_argument"><code class="docutils literal notranslate"><span class="pre">test_initialise_board_argument()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_initialise_board_exists"><code class="docutils literal notranslate"><span class="pre">test_initialise_board_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_initialise_board_return_type"><code class="docutils literal notranslate"><span class="pre">test_initialise_board_return_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_main_module_exists"><code class="docutils literal notranslate"><span class="pre">test_main_module_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_mp_game_engine_exists"><code class="docutils literal notranslate"><span class="pre">test_mp_game_engine_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_place_battleships_arguments"><code class="docutils literal notranslate"><span class="pre">test_place_battleships_arguments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_place_battleships_exists"><code class="docutils literal notranslate"><span class="pre">test_place_battleships_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_place_battleships_return_type"><code class="docutils literal notranslate"><span class="pre">test_place_battleships_return_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_placement_interface_exists"><code class="docutils literal notranslate"><span class="pre">test_placement_interface_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_root_exists"><code class="docutils literal notranslate"><span class="pre">test_root_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_students.test_simple_game_loop_exists"><code class="docutils literal notranslate"><span class="pre">test_simple_game_loop_exists()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Battleships Game</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, OJ.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/modules.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

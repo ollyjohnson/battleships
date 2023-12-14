@@ -1,0 +1,6 @@
+README.md
+setup.py
+battleships_game_pkg_oj263.egg-info/PKG-INFO
+battleships_game_pkg_oj263.egg-info/SOURCES.txt
+battleships_game_pkg_oj263.egg-info/dependency_links.txt
+battleships_game_pkg_oj263.egg-info/top_level.txt
