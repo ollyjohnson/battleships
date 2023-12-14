@@ -11,7 +11,7 @@ setuptools.setup(
     description="A battleships game",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/ollyjohnson/battleships",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

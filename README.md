@@ -15,6 +15,7 @@ To meet the stretch goals I have:
     - Medium: If the last shot was a hit, it will attack a neighbour of the previous shot
     - Hard: looks through all previous shots that were a hit and checks if any of there neighbours have been hit, if they have then it works out the orientation and checks for valid neighbours of that orientation
  - Added a setup webpage to allow the user to select the difficulty and board size before being redirected to the placement page.
+ - I have generated a detailed index.html file with Sphinx
 
 ## Prerequisites
 Before you begin, ensure you have the following requirements:
@@ -60,4 +61,4 @@ The project package is seperated into four python modules:
 - **License**: This project is licensed under the MIT License - see the LICENSE file for details.
 - **Acknowledgements**: A special thanks to Matt Collison and all Teaching Assistants for their help.
 
-For more information and source code, please visit [GitHub Repository Link].
+For more information and source code, please visit [https://github.com/ollyjohnson/battleships].
