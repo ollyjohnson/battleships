@@ -220,7 +220,7 @@ def ai_opponent_game_loop():
         attack(attack_coordinates,players["AI"][0],players["AI"][1])
         logging.info("%s has attacked coordinates %s.", player1, attack_coordinates)
         if sum(players["AI"][1].values()) == 0:
-            logging.info("Game Over, {player1} wins!", player1=player1)
+            logging.info("Game Over, %s wins!", player1)
             print(f"Game Over, {player1} wins!")
             break
         ai_attack_coordinates = generate_attack(players["AI"][2],board_size,
