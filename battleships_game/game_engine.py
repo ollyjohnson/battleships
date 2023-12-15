@@ -1,3 +1,4 @@
+"""The elements required to run a single player game of battleships"""
 import logging
 from components import initialise_board,create_battleships,place_battleships
 

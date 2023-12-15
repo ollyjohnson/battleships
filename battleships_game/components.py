@@ -1,3 +1,4 @@
+""""This contains all the necessary features to be used in creating and setting up the game"""
 import logging
 import random
 import json

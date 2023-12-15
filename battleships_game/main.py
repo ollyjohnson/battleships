@@ -1,3 +1,4 @@
+"""Handles requests to and from the server for the web interface version of the battleships game"""
 import logging
 from flask import Flask, request, render_template, jsonify
 from components import create_battleships, initialise_board, place_battleships

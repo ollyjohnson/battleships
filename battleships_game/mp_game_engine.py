@@ -1,3 +1,4 @@
+"""The elements required to run a game of battleships against an ai opponent"""
 import random
 import logging
 from components import initialise_board,create_battleships,place_battleships
