@@ -54,7 +54,7 @@ def simple_game_loop():
     board_size = 0
     while board_size < 6 or board_size > 10:
         try:
-            board_size = int(input("What size would you like the board? (5-10):"))
+            board_size = int(input("What size would you like the board? (6-10):"))
         except ValueError:
             logging.warning("Invalid board size entered: %s", board_size)
             print("Please enter a number between (6-10)")
