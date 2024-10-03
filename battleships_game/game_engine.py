@@ -1,6 +1,6 @@
 """The elements required to run a single player game of battleships"""
 import logging
-from components import initialise_board,create_battleships,place_battleships
+from .components import initialise_board,create_battleships,place_battleships
 
 def attack(coordinates: tuple, board_to_attack: list, battleships:dict) -> bool:
     """Proccesses an attack on a battleship.

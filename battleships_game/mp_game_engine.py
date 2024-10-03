@@ -1,8 +1,8 @@
 """The elements required to run a game of battleships against an ai opponent"""
 import random
 import logging
-from components import initialise_board,create_battleships,place_battleships
-from game_engine import cli_coordinates_input,attack
+from .components import initialise_board,create_battleships,place_battleships
+from .game_engine import cli_coordinates_input,attack
 
 logging.basicConfig(filename="battleships.log", level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s')
