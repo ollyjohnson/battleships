@@ -96,4 +96,4 @@ def process_attack():
 
 if __name__ == '__main__':
     app.template_folder = "templates"
-    app.run(debug=True)
+    app.run()
