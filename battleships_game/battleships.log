@@ -1582,3 +1582,7 @@
 2024-10-03 18:22:16,147 - INFO -  * Restarting with stat
 2024-10-03 18:22:16,452 - WARNING -  * Debugger is active!
 2024-10-03 18:22:16,456 - INFO -  * Debugger PIN: 959-214-118
+2024-10-03 18:28:44,255 - INFO -  * Detected change in 'c:\\Users\\ollyj\\Documents\\GitHub\\battleships\\battleships_game\\app.py', reloading
+2024-10-03 18:28:44,287 - INFO -  * Restarting with stat
+2024-10-03 18:28:44,599 - WARNING -  * Debugger is active!
+2024-10-03 18:28:44,603 - INFO -  * Debugger PIN: 959-214-118
