@@ -12,43 +12,8 @@ players = {
     "robot": {"Board": None, "Ships": None, "Attacks": [], "Hits": []},
 }
 
-setup = {"board_size":10,"difficulty":"easy"}
+setup = {"board_size": 8, "difficulty": "hard"}
 
-@app.route('/setup', methods=["GET", "POST"])
-def process_setup():
-    """Handles the setup for battleships at the /setup url.
-
-    GET: Loads the options for difficulty and board size.
-    POST: Receives player's choices for difficulty and board_size.
-
-    Returns: JSON response indicating successful reception.
-    """
-    global players, setup
-    if request.method == "GET":
-        difficulty_options = {
-            "easy": "Easy",
-            "medium": "Medium",
-            "hard": "Hard",
-        }
-        board_size_options = [i for i in range(6,16)]
-
-        return render_template('setup.html', difficulty_options=difficulty_options,
-                              board_size_options=board_size_options)
-
-    if request.method == "POST":
-        difficulty = request.form.get("difficulty")
-        board_size = int(request.form.get("board_size"))
-        if difficulty not in ["easy", "medium", "hard"]:
-            return jsonify({"error": "Invalid difficulty selected."})
-        if board_size < 6 or board_size > 15:
-            return jsonify({"error": "Invalid board size selected."})
-        setup["difficulty"] = difficulty
-        setup["board_size"] = board_size
-        logging.info("Game setup succesful. Difficulty - %s Board Size - %s",
-                     difficulty, board_size)
-        return jsonify({'message': 'Received'})
-
-    return render_template('setup.html')
 @app.route('/placement', methods=["GET", "POST"])
 def placement_interface():
     """Handles the placement interface for battleships at the /placement url.
