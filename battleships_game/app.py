@@ -1,10 +1,12 @@
 """Handles requests to and from the server for the web interface version of the battleships game."""
 import logging
+import os
 from flask import Flask, request, render_template, jsonify, redirect
-from .components import create_battleships, initialise_board, place_battleships
-from .game_engine import attack
-from .mp_game_engine import generate_attack
+from components import create_battleships, initialise_board, place_battleships
+from game_engine import attack
+from mp_game_engine import generate_attack
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 app = Flask(__name__)
 
 players = {
