@@ -1,6 +1,6 @@
 """Handles requests to and from the server for the web interface version of the battleships game"""
 import logging
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, redirect
 from components import create_battleships, initialise_board, place_battleships
 from game_engine import attack
 from mp_game_engine import generate_attack
@@ -16,43 +16,40 @@ setup = {"board_size": 8, "difficulty": "hard"}
 
 @app.route('/placement', methods=["GET", "POST"])
 def placement_interface():
-    """Handles the placement interface for battleships at the /placement url.
-
-    GET: Loads the empty board for the player to place their ships.
-    POST: Receives player's ship placement data and initialises boards for player and the ai.
-
-    returns: JSON response indicating successful reception."""
-    global players,setup
+    """Initializes the boards for both the player and AI without user input."""
+    global players, setup
     ships = create_battleships()
 
-    if request.method == "GET":
-        return render_template('placement.html', ships=ships, board_size=setup["board_size"])
+    # Hard mode and board size of 8
+    players["player1"]["Board"] = place_battleships(
+        initialise_board(size=setup["board_size"]), ships, algorithm="random"
+    )
+    players["player1"]["Ships"] = create_battleships()
+    players["player1"]["Attacks"] = []
 
-    if request.method == "POST":
-        player_ships = request.get_json()
+    players["robot"]["Board"] = place_battleships(
+        initialise_board(size=setup["board_size"]), ships, algorithm="random"
+    )
+    players["robot"]["Ships"] = create_battleships()
+    players["robot"]["Attacks"] = []
+    players["robot"]["Hits"] = []
 
-        players["player1"]["Board"] = place_battleships(
-            initialise_board(size=setup["board_size"]), ships, algorithm="custom",
-            custom_placement=player_ships)
-        players["player1"]["Ships"] = create_battleships()
-        players["player1"]["Attacks"] = []
+    logging.info("Boards initialized for demo version")
 
-        players["robot"]["Board"] = place_battleships(
-            initialise_board(size=setup["board_size"]), ships, algorithm="random")
-        players["robot"]["Ships"] = create_battleships()
-        players["robot"]["Attacks"] = []
-        players["robot"]["Hits"] = []
-        logging.info("Boards initialised")
-        return jsonify({'message': 'Received'})
+    return jsonify({'message': 'Game initialized'})
 
-    return
 
 @app.route('/', methods=["GET"])
 def root():
-    """Renders the main game interface at the root / url."""
+    """Automatically initialize and render the main game interface."""
     global players
+    if players["player1"]["Board"] is None:
+        # Initialize the boards if they are not already initialized
+        return redirect('/placement')
+
     player1_board = players["player1"]["Board"]
     return render_template('main.html', player_board=player1_board)
+
 
 @app.route('/attack', methods=["GET"])
 def process_attack():
